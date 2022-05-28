@@ -55,13 +55,11 @@ local Namecall
         local Args = {...}
         local Method = getnamecallmethod()
 
-        if not checkcaller()  then
-            if self.Name == "MainEvent" and Method == "FireServer" then
+        if self.Name == "MainEvent" and Method == "FireServer" then
                 if Args[1] == "TeleportDetect" then
                     return
                 end
             end
-        end
 
         return Namecall(self, ...) 
     end)
